@@ -217,5 +217,9 @@ def send():
     }
     requests.post(url, headers=headers, json=data)
 
-if __name__ == "__main__":
-    send()
+import requests
+
+def send():
+    print("ready to send LINE message")
+
+# ❗ 不要自動執行任何東西
