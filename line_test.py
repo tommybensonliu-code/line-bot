@@ -88,16 +88,15 @@ gitaigo = [
 
 def create_message():
     n2 = random.sample(n2_words, 3)
-    gita = random.sample(gitaigo, 3)
+    gita = random.sample(gitaigo, 4)
 
     msg = "【今日學習】\n\n📘 N2單字\n"
     for i, (w, kana, meaning) in enumerate(n2, 1):
         msg += f"{i}. {w}（{kana}）：{meaning}\n"
 
     msg += "\n✨ 擬態語 / 副詞\n"
-    for i, (w, meaning) in enumerate(gita, 4):
-        msg += f"{i}. {w}：{meaning}\n"
-
+    for i, (w, meaning, ex, tr) in enumerate(gita, 4):
+    msg += f"{i}. {w}\n→ {meaning}\n→ {ex}\n→ {tr}\n\n"
     return msg
 
 def send():
