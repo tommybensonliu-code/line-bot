@@ -217,9 +217,5 @@ def send():
     }
     requests.post(url, headers=headers, json=data)
 
-
-def main():
+if __name__ == "__main__":
     send()
-    
-
-# ❗ 不要自動執行任何東西
