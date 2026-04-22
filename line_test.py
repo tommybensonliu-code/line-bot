@@ -4,8 +4,8 @@ import random
 TOKEN = "q8BdEyuWQJ6UtIgxWPKclU6AjHze2ZmT0hBr3UucxVk8PxhaEjB42isRIHpirYggtPL8dgWFtTmMly9YnGSlCSDhYOlvR57RGOfD3qyJMD5K9zTtbWPl5WUKYMlrEXMl9mJDc2fMOhC+cPo52H6sfwdB04t89/1O/w1cDnyilFU="
 USER_ID = "Ufdfcecd1f1ed09b1b874c53ad981726a"
 
-# ===== N2單字（100個）=====
-n2_words = [
+# ===== N1單字（100個）=====
+n1_words = [
     ("欺く", "あざむく", "欺騙", "敵の目を欺いて敵陣に潜入した。", "欺騙敵人的眼睛潛入了敵陣。"),
     ("操る", "あやつる", "操縱、駕馭", "彼は五力国語を自由に操る。", "他能自由地操縱（精通）五種語言。"),
     ("危ぶむ", "あやぶむ", "擔憂、懷疑", "その計画の成功は危ぶまれている。", "該計劃的成功正受到質疑（令人擔憂）。"),
