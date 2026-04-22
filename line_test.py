@@ -85,33 +85,43 @@ gitaigo = [
 ("ぽかぽか","暖和","天気がぽかぽかだ。","天氣溫暖"),
 ("ひんやり","涼","風がひんやりする。","風很涼")
 ]
-
 def create_message():
     n2 = random.sample(n2_words, 3)
-    gita = random.sample(gitaigo, 4)
+    gita = random.sample(gitaigo, 3)
 
-    msg = "【今日學習】\n\n📘 N2單字\n"
+    msg = "📘【今日學習】\n\nN2單字\n"
+
     for i, (w, kana, meaning) in enumerate(n2, 1):
-        msg += f"{i}. {w}（{kana}）：{meaning}\n"
+        msg += f"{i}. {w}（{kana}）\n→ {meaning}\n\n"
 
-    msg += "\n✨ 擬態語 / 副詞\n"
-    for i, (w, meaning, ex, tr) in enumerate(gita, 4):
-    msg += f"{i}. {w}\n→ {meaning}\n→ {ex}\n→ {tr}\n\n"
+    msg += "✨ 擬態語\n"
+
+    for i, (w, meaning, ex, tr) in enumerate(gita, 1):
+        msg += f"{i}. {w}\n→ {meaning}\n→ {ex}\n→ {tr}\n\n"
+
     return msg
 
+# =====================
+# 發送 LINE
+# =====================
 def send():
     url = "https://api.line.me/v2/bot/message/push"
     headers = {
         "Authorization": f"Bearer {TOKEN}",
         "Content-Type": "application/json"
     }
+
     data = {
         "to": USER_ID,
         "messages": [
             {"type": "text", "text": create_message()}
         ]
     }
+
     requests.post(url, headers=headers, json=data)
 
+# =====================
+# 執行
+# =====================
 if __name__ == "__main__":
     send()
